@@ -18,5 +18,6 @@ PyRAT 1.0
 Host: kali
 Say Hi!
 
+cmd>
 ```
 

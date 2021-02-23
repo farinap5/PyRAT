@@ -21,3 +21,21 @@ Say Hi!
 cmd>
 ```
 
+## Help Menu
+```
+cmd> help
+
+Help Menu:
+----------
+help  | Help menu.
+exit  | Break connection but keep running.
+close | Close connection and stop.
+    
+sysinfo | System Information.
+pyinfo  | Python Information.
+shell   | Spawn shell.
+    
+cmd>
+```
+---
+

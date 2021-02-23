@@ -32,7 +32,7 @@ exit  | Break connection but keep running.
 close | Close connection and stop.
     
 sysinfo | System Information.
-pyinfo  | Python Information.
+pyinfo  | Python Installed Information.
 shell   | Spawn shell.
     
 cmd>

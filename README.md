@@ -4,6 +4,7 @@
 <p align="center"> 
    <img src="https://img.shields.io/badge/language-python-blue.svg">
 </p>
+<p align="center">Tested on Linux.</p>
 
 ---
 

@@ -1,5 +1,5 @@
 # Python Simple Remote Access Tool
-# By farinap5 for study purpose.
+# For study purpose.
 
 
 import sys

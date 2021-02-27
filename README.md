@@ -22,7 +22,7 @@ $ nc -lvp 4444
 Listening on 0.0.0.0 4444
 Connection received on localhost 39978
 Connection Estabilished!
-PyRAT 1.0
+PyRAT 1.1
 Host: kali
 Say Hi!
 

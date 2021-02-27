@@ -52,3 +52,5 @@ cmd>
 ```
 ---
 
+some information about python installed on the infected computer can be obtained typing the command `pyinfo`.
+

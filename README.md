@@ -52,5 +52,8 @@ cmd>
 ```
 ---
 
-some information about python installed on the infected computer can be obtained typing the command `pyinfo`.
+## About 
+PyRAT comes with the objective of studying some processes and possibilities in a simple spyware malware in python.
+
+Some information about python installed on the infected computer can be obtained typing the command `pyinfo`.
 

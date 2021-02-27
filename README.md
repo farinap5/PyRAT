@@ -13,6 +13,8 @@ Usage of this malware (PyRAT) for attack targets without prior mutual consent is
 It is the end user's responsability to obey all applicable local, state, federal and international laws. 
 Developer assume no liability and not responsible for any misuse or damage caused by this program.
 
+Do not upload to VirusTotal!
+
 ---
 
 ## Use netcat to receive connection.

@@ -61,3 +61,5 @@ Some information about python installed on the infected computer can be obtained
 
 As well as information about the system can `sysinfo`.
 
+There are some features to encrypt files with symetric key and decrypt, make sure to do both with the same key. 
+

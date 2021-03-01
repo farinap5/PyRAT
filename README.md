@@ -58,10 +58,3 @@ cmd>
 PyRAT comes with the objective of studying some processes and possibilities in a simple spyware malware in python.
 
 
-## Features
-Some information about python installed on the infected computer can be obtained typing the command `pyinfo`.
-
-As well as information about the system can `sysinfo`.
-
-There are some features to encrypt files with symetric key and decrypt, make sure to do both with the same key. 
-

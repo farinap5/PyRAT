@@ -50,6 +50,7 @@ encry   | Encrypt file.
           Usage: encry /path/to/the/file key
 decry   | Decrypt file.
           Usage: decry /path/to/the/file key
+          
 cmd>
 ```
 ---

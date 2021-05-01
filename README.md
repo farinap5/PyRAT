@@ -59,4 +59,5 @@ cmd>
 ## About 
 PyRAT comes with the objective of studying some processes and possibilities in a simple spyware malware in python.
 
+The project has a simple persistence function which makes the software keeping running looking for a connection even without a server connected.
 

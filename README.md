@@ -24,7 +24,7 @@ $ nc -lvp 4444
 Listening on 0.0.0.0 4444
 Connection received on localhost 39978
 Connection Estabilished!
-PyRAT 1.1
+PyRAT 1.12
 Host: kali
 Say Hi!
 
@@ -40,7 +40,8 @@ Help Menu:
 help  | Help menu.
 exit  | Break connection but keep running.
 close | Close connection and stop.
-    
+
+sendbc  | Send broadcast notification.
 sysinfo | System Information.
 pyinfo  | Python Information.
 shell   | Spawn shell.

